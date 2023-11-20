@@ -1,0 +1,131 @@
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .container2 {
+    margin: 0 auto;
+    max-width: 1100px;
+    @media (max-width: 600px) {
+      padding: 0px 0px;
+    }
+  }
+  
+  .navbar {
+    touch-action: none;
+  }
+  
+  .navbar ul {
+    display: flex;
+  }
+  
+  .navbar a {
+    color: #333;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin: 20px;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .navbar a:hover {
+    color: #fea9b1;
+    font-size: 1.3em;
+  }
+  
+  .navbar li {
+    margin: 0 1em;
+  }
+  
+  .navbar .menuDesktop {
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+  
+  .navbar .menuMobile {
+    display: none;
+    @media (max-width: 600px) {
+      display: block;
+    }
+  
+    button {
+      background-color: #ececec;
+      border: none;
+      border-radius: 4px;
+      padding: 0px 6px;
+    }
+    .closeIcon {
+      background-color: transparent !important;
+      position: absolute;
+      right: 5px;
+      top: 10px;
+      width: 60px;
+    }
+  
+    .navSidebar {
+      /* background: #333; */
+      background-color: rgba(17, 17, 17, 0.95);
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      transition: 500ms;
+      z-index: 10000000;
+    }
+  
+    .navSidebar.active {
+      right: 0;
+      transition: 350ms;
+      z-index: 10000;
+    }
+    .navSidebarContent {
+      position: relative;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .navSidebarContent li {
+      list-style: none;
+      font-size: 30px;
+      font-weight: 500;
+      padding: 17px 0px;
+      cursor: pointer;
+    }
+  
+    .navSidebarContent li a {
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+  
+  .navbar .special {
+    color: #fe5464;
+    font-size: 1em;
+    font-weight: 500;
+    padding-right: 0.5em;
+  }
+  
+  .whatsappBtn {
+    position: fixed;
+    bottom: 56px;
+    right: 32px;
+    width: 84px;
+    margin-top: 100px;
+    z-index: 10;
+    cursor: pointer;
+    @media (max-width: 600px) {
+      bottom: 40px;
+      right: 20px;
+      width: 65px;
+    }
+  }
+  

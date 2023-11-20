@@ -1,113 +1,104 @@
 import Image from 'next/image'
+import React from 'react';
+import Navbar from './layouts/navbar'
 
 export default function Home() {
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+    <Navbar />
+      <main className="flex flex-col bg-white">
+        <div className="bg-[url('/images/bg.png')] w-full h-full bg-no-repeat py-24 pb-36 bg-cover mx-auto text-center">
+          <div className="text-white font-bold text-6xl max-w-screen-sm	 mx-auto pt-24">
+            Aksesoris lantai vinyl dan PVC No. 1
+          </div>
+          <div className="text-slate-100 mx-auto  max-w-screen-sm pt-8">
+            Menjual berbagai jenis aksesoris lantai, pvc dan vinyl.
+            Klik tombol dibawah dan kunjungi toko online kami sekarang.
+          </div>
+          <button className="bg-[#ec6169] mt-8 px-8 py-2 text-md text-white rounded-lg">
+            Lihat toko
+          </button>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </main>
+      <main className="bg-white">
+        <div className="flex justify-between max-w-screen-lg mx-auto pt-24 pb-24 gap-10">
+          <div className="flex">
+            <img src="/images/beragam-warna-1.png" alt="" className="w-72 h-fit" />
+            <div>
+              <img src="/images/beragam-warna-2.png" alt="" className="w-64 h-fit" />
+              <img src="/images/beragam-warna-3.png" alt="" className="w-64 h-fit"/>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center items-start max-w-sm">
+            <div className="font-bold text-5xl">Beragam Warna</div>
+            <div className="pt-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus sit voluptatem 
+              reiciendis esse asperiores accusamus veniam fugiat minus voluptates cupiditate.
+            </div>
+          </div>
+        </div>
+      </main>
+      <main className="bg-black">
+        <div className="flex flex-col pt-24 pb-24 text-center justify-center items-center mx-auto">
+            <div className="font-bold text-5xl text-white">Produk kami</div>
+            <div className="pt-4 text-white">
+              Cari produk yang anda butuhkan berdasarkan etalase
+            </div>
+            <div className="flex my-12 gap-10">
+              <div className="shadow-lg	bg-white rounded-3xl max-w-[225px] pb-8 shadow-[#ec6169]">
+                <img src="/images/etalase/lem.png" alt="" />
+                <div className="font-bold text-lg px-4 py-4">
+                  Lem vinyl/ PVC flooring
+                </div>
+                <button className="bg-white border-2 border-black py-2 px-8 font-bold rounded-lg">
+                  Lihat
+                </button>
+              </div>
+              <div className="shadow-lg	bg-white rounded-3xl max-w-[225px] pb-8 shadow-[#ec6169]">
+                <img src="/images/etalase/wood.png" alt="" />
+                <div className="font-bold text-lg px-4 py-4">
+                  Lem vinyl/ PVC flooring
+                </div>
+                <button className="bg-white border-2 border-black py-2 px-8 font-bold rounded-lg">
+                  Lihat
+                </button>
+              </div>
+              <div className="shadow-lg	bg-white rounded-3xl max-w-[225px] pb-8 shadow-[#ec6169]">
+                <img src="/images/etalase/amplop.png" alt="" />
+                <div className="font-bold text-lg px-4 py-4">
+                  Lem vinyl/ PVC flooring
+                </div>
+                <button className="bg-white border-2 border-black py-2 px-8 font-bold rounded-lg">
+                  Lihat
+                </button>
+              </div>
+            </div>
+        </div>
+      </main>
+      <main className="bg-white">
+        <div className="flex flex-col pt-24 pb-24 text-center justify-center items-center mx-auto">
+          <div className="font-bold text-5xl text-black">Temui kami di</div>
+          <div className="flex gap-8 pt-16">
+            <div className="bg-gradient-to-br from-white via-green-200 to-green-300 shadow-2xl max-w-[500px] relative text-left rounded-xl border-4 flex flex-col relative">
+              <div className="pt-8 px-8">
+                <div className="font-bold text-xl">Toko Ijo</div>
+                <div className="text-black">Kunjungi lapak kami di tokopedia dengan rating 4.9 bintang</div>
+              </div>
+              <img src="/images/tokped3.png" alt="" className="mx-auto text-right rounded-br-lg w-[90%] mt-8 absolute bottom-0 right-0 shadow-lg" />
+            </div>
+            <div>
+              <div className="bg-[#fc6203] shadow-2xl max-w-[300px] rounded-xl border-4 relative">
+                <div className="pt-8 text-left px-8">
+                  <div className="font-bold text-xl text-white">Toko Oren</div>
+                  <div className="text-white">Kunjungi lapak kami di Shopee dengan rating 4.9 bintang</div>
+                </div>
+                <img src="/images/shopee.png" alt="" className="w-48 text-center rounded-xl mx-auto pt-8 shadow-lg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </>
   )
 }
