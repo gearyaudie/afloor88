@@ -47,7 +47,7 @@ export function MobileDrawer() {
                   <Link href="/" onClick={() => lockScroll()}>Home</Link>
                 </li>
                 <li onClick={() => setSidebarOpened(false)}>
-                  <Link href="/projects" onClick={() => lockScroll()}>Projects</Link>
+                  <Link href="/projects" onClick={() => lockScroll()}>Artikel</Link>
                 </li>
               </div>
             </div>
