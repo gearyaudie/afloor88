@@ -80,6 +80,25 @@ export default function Navbar() {
                 </span>
               </Link>
             </li>
+            <li
+              className={
+                navbar
+                  ? "mr-12 text-slate-700 text-black"
+                  : "mr-12 text-slate-700 text-white"
+              }
+            >
+              <Link href="/products">
+                <span
+                  className={
+                    pathName == "/products"
+                      ? "underline decoration-[#ec6169]"
+                      : ""
+                  }
+                >
+                  Products
+                </span>
+              </Link>
+            </li>
           </ul>
         </div>
         <div>

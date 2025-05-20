@@ -18,6 +18,7 @@ const postQuery = groq`
     title,
     content,
     slug,
+    excerpt,
     img {
       asset -> {
         url
@@ -62,10 +63,7 @@ export default async function BlogPostPage({ params }: Params) {
             <h1 className="text-[36px] font-500 mb-6 text-black pl-12 pr-12 leading-snug">
               {post.title}
             </h1>
-            <div className="pl-12 pr-12 text-gray-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
-              odit?
-            </div>
+            <div className="pl-12 pr-12 text-gray-500">{post.excerpt}</div>
           </div>
           <img
             src={post.img?.asset?.url}

@@ -18,6 +18,9 @@ export const SharedNavbar = () => {
           <Link href="/blog">
             <div className="cursor-pointer">Artikel</div>
           </Link>
+          <Link href="/products">
+            <div className="cursor-pointer">Products</div>
+          </Link>
         </div>
       </div>
     </>
