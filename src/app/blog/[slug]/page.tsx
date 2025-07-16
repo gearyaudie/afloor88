@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { SharedNavbar } from "@/app/components/shared-navbar";
 import { PortableText } from "@portabletext/react";
+import { Metadata } from "next";
 
 type Params = {
   params: {
@@ -19,6 +20,7 @@ const postQuery = groq`
     content,
     slug,
     excerpt,
+    keywords,
     img {
       asset -> {
         url
@@ -83,4 +85,33 @@ export default async function BlogPostPage({ params }: Params) {
       </div>
     </div>
   );
+}
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const post = await client.fetch(postQuery, { slug: params.slug });
+
+  if (!post) return {};
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    keywords: post.keywords?.map((k: string) => k.toLowerCase()) ?? [],
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://www.efloor.id/blog/${params.slug}`, // 🔁 update domain
+      images: [
+        {
+          url: post.img?.asset?.url || "/images/default-og.png",
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+      type: "article",
+    },
+    alternates: {
+      canonical: `https://www.yourdomain.com/blog/${params.slug}`,
+    },
+  };
 }

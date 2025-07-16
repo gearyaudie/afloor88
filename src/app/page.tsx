@@ -3,6 +3,8 @@ import React from "react";
 import Navbar from "./layouts/navbar";
 import { Footer } from "./layouts/footer";
 import { client } from "../../sanity.client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Home() {
   const [posts, setPosts] = React.useState();
@@ -24,26 +26,57 @@ export default function Home() {
     getPosts();
   }, []);
 
+  const pathName = usePathname();
+
   return (
     <>
-      <Navbar />
-      <main className="flex flex-col bg-white">
-        <div className="bg-[url('/images/bg.png')] w-full px-8 h-full bg-no-repeat py-24 pb-36 bg-cover mx-auto text-center">
-          <div className="text-white font-bold text-4xl max-w-screen-sm	 mx-auto pt-24 md:lg:text-6xl">
-            Aksesoris lantai vinyl dan PVC No. 1
+      <div className="flex flex-col max-w-[1150px] mx-auto">
+        <div className="flex justify-between items-center px-12">
+          <img src="images/efloor.png" alt="" className="w-28 h-28" />
+          <div className="flex gap-12 text-lg font-[500]">
+            <div>
+              <Link href="/blog">
+                <span
+                  className={
+                    pathName == "/blog" ? "underline decoration-[#ec6169]" : ""
+                  }
+                >
+                  Artikel
+                </span>
+              </Link>
+            </div>
+            <div>
+              <Link href="/products">
+                <span
+                  className={
+                    pathName == "/products"
+                      ? "underline decoration-[#ec6169]"
+                      : ""
+                  }
+                >
+                  Products
+                </span>
+              </Link>
+            </div>
           </div>
-          <div className="text-slate-100 mx-auto  max-w-screen-sm pt-8">
-            Menjual berbagai jenis aksesoris lantai, pvc dan vinyl. Klik tombol
-            dibawah dan kunjungi toko online kami sekarang.
-          </div>
-          <button
-            className="bg-[#ec6169] mt-8 px-8 py-2 text-md text-white rounded-lg"
-            onClick={() => redirectToPage("https://www.tokopedia.com/afloor")}
-          >
-            Lihat toko
-          </button>
         </div>
-      </main>
+      </div>
+      <div className="relative bg-[url('/images/bg.png')] bg-cover bg-center">
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black opacity-40"></div>
+
+        {/* Content on top */}
+        <div className="relative z-10 flex flex-col py-24 px-6">
+          <div className="max-w-[1000px] mx-auto text-white w-full">
+            <div className="font-[600] text-5xl text-left">
+              Excellent Flooring.
+            </div>
+            <br />
+            <div className="font-[600] text-5xl text-left">for Your Needs</div>
+          </div>
+        </div>
+      </div>
+
       <main className="bg-white">
         <div className="block md:lg:flex justify-center items-center max-w-screen-lg mx-auto pt-24 pb-24 gap-10">
           <div className="flex flex-col justify-center items-center mx-auto max-w-sm text-black px-8 order-2">
