@@ -4,7 +4,16 @@ import Navbar from "./layouts/navbar";
 import { Footer } from "./layouts/footer";
 import { client } from "../../sanity.client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Navigation, Pagination } from "swiper/modules";
+
+import { redirect, usePathname } from "next/navigation";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default function Home() {
   const [posts, setPosts] = React.useState();
@@ -31,8 +40,8 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col max-w-[1150px] mx-auto">
-        <div className="flex justify-between items-center px-12">
-          <img src="images/efloor.png" alt="" className="w-28 h-28" />
+        <div className="flex justify-between items-center px-10">
+          <img src="images/efloor.png" alt="" className="w-24 h-24" />
           <div className="flex gap-12 text-lg font-[500]">
             <div>
               <Link href="/blog">
@@ -58,24 +67,165 @@ export default function Home() {
                 </span>
               </Link>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="relative bg-[url('/images/bg.png')] bg-cover bg-center">
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black opacity-40"></div>
-
-        {/* Content on top */}
-        <div className="relative z-10 flex flex-col py-24 px-6">
-          <div className="max-w-[1000px] mx-auto text-white w-full">
-            <div className="font-[600] text-5xl text-left">
-              Excellent Flooring.
+            <div>
+              <Link href="/projects">
+                <span
+                  className={
+                    pathName == "/projects"
+                      ? "underline decoration-[#ec6169]"
+                      : ""
+                  }
+                >
+                  Projects
+                </span>
+              </Link>
             </div>
-            <br />
-            <div className="font-[600] text-5xl text-left">for Your Needs</div>
           </div>
         </div>
       </div>
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        onSlideChange={() => console.log("slide change")}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        <SwiperSlide>
+          <div className="mx-8">
+            <div className="relative bg-[url('/images/bg.png')] bg-cover bg-center my-2 mx-auto max-w-[1000px]">
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-black opacity-70"></div>
+
+              {/* Content on top */}
+              <div className="relative z-10 flex">
+                <div className="text-white flex-1">
+                  <div className="flex flex-col justify-center h-full align-items-center pl-16">
+                    <div className="font-[600] text-[36px] text-left leading-tight">
+                      Lem Vinyl EFLOOR
+                      <br />
+                      Heavy Duty | For Projects
+                    </div>
+                    <div className="pt-8 flex gap-4">
+                      <button className="bg-white text-black rounded-lg px-4 py-2 font-bold">
+                        <a href="https://www.tokopedia.com/efloorid/lem-vinyl-lantai-efloor-1-kg-4-kg-20-kg-efloor-max-lem-kental-dan-murni-1730312274422761422?extParam=ivf%3Dfalse%3FextParam%3Dwhid%3D3621009&aff_unique_id=&channel=others&chain_key=">
+                          Liat Produk Kami
+                        </a>
+                      </button>
+                      <button
+                        className="border-2 border-solid border-white rounded-lg px-4 py-2"
+                        onClick={() =>
+                          redirectToPage(
+                            "https://wa.me/628561153725?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Anda"
+                          )
+                        }
+                      >
+                        Chat di Whatsapp
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex-1 w-full">
+                  {/* Square img here */}
+                  <img src="images/lem-vinyl.jpeg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="mx-8">
+            <div className="relative bg-[url('/images/bg.png')] bg-cover bg-center my-2 mx-auto max-w-[1000px]">
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-black opacity-70"></div>
+
+              {/* Content on top */}
+              <div className="relative z-10 flex">
+                <div className="text-white flex-1">
+                  <div className="flex flex-col justify-center h-full align-items-center pl-16">
+                    <div className="font-[600] text-[44px] text-left leading-tight">
+                      Excellent Flooring. <br />
+                      for Your Needs
+                    </div>
+                    <div className="pt-8 flex gap-4">
+                      <button className="bg-white text-black rounded-lg px-4 py-2 font-bold">
+                        <a href="https://www.tokopedia.com/efloorid/lantai-vinyl-3mm-efloor-pvc-high-quality-series-tahan-air-hw-3312-7fd62?extParam=src%3Dshop%26whid%3D3621009&aff_unique_id=&channel=others&chain_key=">
+                          Liat Produk Kami
+                        </a>
+                      </button>
+                      <button
+                        className="border-2 border-solid border-white rounded-lg px-4 py-2"
+                        onClick={() =>
+                          redirectToPage(
+                            "https://wa.me/628561153725?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Anda"
+                          )
+                        }
+                      >
+                        Chat di Whatsapp
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex-1 w-full">
+                  {/* Square img here */}
+                  <img src="images/lantai-vinyl-tahan-air.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="mx-8">
+            <div className="relative bg-[url('/images/bg.png')] bg-cover bg-center my-2 mx-auto max-w-[1000px]">
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-black opacity-70"></div>
+
+              {/* Content on top */}
+              <div className="relative z-10 flex">
+                <div className="text-white flex-1">
+                  <div className="flex flex-col justify-center h-full align-items-center pl-16">
+                    <div className="font-[600] text-[36px] text-left leading-tight">
+                      List Siku L <br />
+                      End Molding EFLOOR
+                    </div>
+                    <div className="pt-8 flex gap-4">
+                      <button className="bg-white text-black rounded-lg px-4 py-2 font-bold">
+                        <a href="https://www.tokopedia.com/efloorid/list-siku-l-untuk-lantai-kayu-lantai-vinyl-lantai-parket-gg-9808-l8-e4955?extParam=ivf%3Dfalse%3FextParam%3Dwhid%3D3621009&aff_unique_id=&channel=others&chain_key=">
+                          Liat Produk Kami
+                        </a>
+                      </button>
+                      <button
+                        className="border-2 border-solid border-white rounded-lg px-4 py-2"
+                        onClick={() =>
+                          redirectToPage(
+                            "https://wa.me/628561153725?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Anda"
+                          )
+                        }
+                      >
+                        Chat di Whatsapp
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex-1 w-full">
+                  {/* Square img here */}
+                  <img src="images/list-siku-l.jpeg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+      <main className="bg-[#28584C] mt-8 text-white">
+        <div className="max-w-[1250px] text-center mx-auto px-8 py-12 flex justify-center">
+          Terpercayai sejak tahun 2000. EFLOOR adalah toko flooring yang menjual
+          berbagai jenis item seperti lantai parket, lantai vinyl, lantai
+          karpet, list aksesoris vinyl seperti list siku l, list t molding, list
+          plint/plank/skirting, list adaptasi/reduser strip. Lem vinyl, lem
+          karpet, lem kayu tahan air WRG.
+        </div>
+      </main>
 
       <main className="bg-white">
         <div className="block md:lg:flex justify-center items-center max-w-screen-lg mx-auto pt-24 pb-24 gap-10">

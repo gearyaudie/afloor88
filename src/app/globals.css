@@ -25,3 +25,17 @@ body {
     )
     rgb(var(--background-start-rgb));
 } */
+
+.swiper-button-prev {
+  color: #fff !important;
+  left: 110px !important;
+}
+
+.swiper-button-next {
+  color: #fff !important;
+  right: 110px !important;
+}
+
+.swiper {
+  max-width: 1200px !important;
+}
