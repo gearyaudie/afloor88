@@ -229,21 +229,20 @@ export default function Home() {
 
       <main className="bg-white">
         <div className="block md:lg:flex justify-center items-center max-w-screen-lg mx-auto pt-24 pb-24 gap-10">
-          <div className="flex flex-col justify-center items-center mx-auto max-w-sm text-black px-8 order-2">
-            <div className="font-bold text-4xl md:lg:text-5xl">
-              Beragam Warna
+          <div className="flex flex-col justify-center items-center mx-auto max-w-sm text-black order-2">
+            <div className="font-bold text-3xl md:lg:text-3xl">
+              List Siku L, List Adaptasi, Skirting/Plint/Plank, List T Moulding
             </div>
             <div className="pt-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-              sit voluptatem reiciendis esse asperiores accusamus veniam fugiat
-              minus voluptates cupiditate.
+              Menjual berbagai jenis list, aksesoris lantai vinyl, tersedia
+              dalam 15+ jenis warna.
             </div>
           </div>
           <div className="flex order-1 mx-auto justify-center items-center">
             <img
               src="/images/beragam-warna-1.png"
               alt=""
-              className="w-72 h-fit hidden md:lg:block"
+              className="w-[338px] h-fit hidden md:lg:block"
             />
             <div>
               <img
@@ -259,7 +258,34 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <div className="mt-20 mb-32 text-center">
+          <div className="font-bold text-3xl">List Paling Populer Kami</div>
+          <div>
+            <div className="flex my-12 gap-10 flex-wrap justify-center items-center">
+              <div className="shadow-lg	bg-white rounded-2xl max-w-[300px] pb-8">
+                <img src="/images/list-siku-l.png" alt="" />
+                <div className="text-lg px-4 py-4 text-black text-left">
+                  List Siku L / Penutup Wallpanel / End Moulding
+                </div>
+              </div>
+              <div className="shadow-lg	bg-white rounded-2xl max-w-[300px] pb-8">
+                <img src="/images/adaptasi.png" alt="" />
+                <div className="text-lg px-4 py-4 text-black text-left">
+                  List Siku L / Penutup Wallpanel / End Moulding
+                </div>
+              </div>
+              <div className="shadow-lg	bg-white rounded-2xl max-w-[300px] pb-8">
+                <img src="/images/skirting.webp" alt="" />
+                <div className="text-lg px-4 py-4 text-black text-left">
+                  List Plint/Plank, Skirting
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
+
       <main className="bg-black">
         <div className="flex flex-col pt-24 pb-24 text-center justify-center items-center mx-auto px-8">
           <div className="font-bold text-4xl md:lg:text-5xl text-white">
