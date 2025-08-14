@@ -14,6 +14,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { SharedNavbar } from "./components/shared-navbar";
 
 export default function Home() {
   const [posts, setPosts] = React.useState();
@@ -39,50 +40,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col max-w-[1150px] mx-auto">
-        <div className="flex justify-between items-center px-10">
-          <img src="images/efloor.png" alt="" className="w-24 h-24" />
-          <div className="flex gap-12 text-lg font-[500]">
-            <div>
-              <Link href="/blog">
-                <span
-                  className={
-                    pathName == "/blog" ? "underline decoration-[#ec6169]" : ""
-                  }
-                >
-                  Artikel
-                </span>
-              </Link>
-            </div>
-            <div>
-              <Link href="/products">
-                <span
-                  className={
-                    pathName == "/products"
-                      ? "underline decoration-[#ec6169]"
-                      : ""
-                  }
-                >
-                  Products
-                </span>
-              </Link>
-            </div>
-            <div>
-              <Link href="/projects">
-                <span
-                  className={
-                    pathName == "/projects"
-                      ? "underline decoration-[#ec6169]"
-                      : ""
-                  }
-                >
-                  Projects
-                </span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+      <SharedNavbar />
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={50}

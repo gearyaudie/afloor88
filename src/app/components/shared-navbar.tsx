@@ -1,28 +1,57 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const SharedNavbar = () => {
+  const pathName = usePathname();
+
   return (
-    <>
-      <div className="max-w-2xl mx-auto flex justify-between items-center bg-white text-black pt-4">
-        <Link href="/">
-          <img
-            src="/images/afloor-logo.png"
-            alt="Afloor Logo"
-            style={{ width: 75, cursor: "pointer" }}
-          />
-        </Link>{" "}
-        <div className="flex gap-10 text-sm">
-          <Link href="/">
-            <div className="cursor-pointer">Home</div>
-          </Link>
-          <Link href="/blog">
-            <div className="cursor-pointer">Artikel</div>
-          </Link>
-          <Link href="/products">
-            <div className="cursor-pointer">Products</div>
-          </Link>
+    <div className="flex flex-col max-w-[1150px] mx-auto">
+      <div className="flex justify-between items-center px-10">
+        <a href="/">
+          <img src="images/efloor.png" alt="" className="w-24 h-24" />
+        </a>
+        <div className="flex gap-12 text-lg font-[500]">
+          <div>
+            <Link href="/blog">
+              <span
+                className={
+                  pathName == "/blog" ? "underline decoration-[#ec6169]" : ""
+                }
+              >
+                Artikel
+              </span>
+            </Link>
+          </div>
+          <div>
+            <Link href="/products">
+              <span
+                className={
+                  pathName == "/products"
+                    ? "underline decoration-[#ec6169]"
+                    : ""
+                }
+              >
+                Products
+              </span>
+            </Link>
+          </div>
+          <div>
+            <Link href="/projects">
+              <span
+                className={
+                  pathName == "/projects"
+                    ? "underline decoration-[#ec6169]"
+                    : ""
+                }
+              >
+                Projects
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
