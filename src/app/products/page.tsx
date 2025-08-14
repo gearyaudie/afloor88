@@ -11,6 +11,7 @@ type Product = {
   name: string;
   image: any;
   description: string;
+  slug: { current: string };
   price: string;
 };
 
@@ -20,6 +21,7 @@ export default async function ProductsMain() {
       _id,
       name,
       description,
+      slug,
       price,
       image {
         asset->{
@@ -49,16 +51,18 @@ export default async function ProductsMain() {
                     style={{ width: "full", height: "auto" }}
                   />
                 )}
-                <div className="flex justify-center items-center w-full bg-grey py-6 w-full">
-                  <div className="text-[20px] font-[600] text-center">
-                    {product.name}
+                <Link href={`/blog/${product.slug.current}`}>
+                  <div className="flex justify-center items-center w-full bg-grey py-6 w-full">
+                    <div className="text-[20px] font-[600] text-center">
+                      {product.name}
+                    </div>
+                    <div className="text-sm text-[#808080]">
+                      {product?.description?.length > 75
+                        ? product?.description?.slice(0, 75) + "..."
+                        : product?.description}
+                    </div>
                   </div>
-                  <div className="text-sm text-[#808080]">
-                    {product?.description?.length > 75
-                      ? product?.description?.slice(0, 75) + "..."
-                      : product?.description}
-                  </div>
-                </div>
+                </Link>
               </Card>
             ))}
           </div>
