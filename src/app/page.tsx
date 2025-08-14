@@ -260,7 +260,7 @@ export default function Home() {
         </div>
 
         <div className="mt-20 mb-32 text-center">
-          <div className="font-bold text-3xl">List Paling Populer Kami</div>
+          <div className="font-semibold text-3xl">List Paling Populer Kami</div>
           <div>
             <div className="flex my-12 gap-10 flex-wrap justify-center items-center">
               <div className="shadow-lg	bg-white rounded-2xl max-w-[300px] pb-8">

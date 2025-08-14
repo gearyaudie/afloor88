@@ -51,7 +51,7 @@ export default async function ProductsMain() {
                     style={{ width: "full", height: "auto" }}
                   />
                 )}
-                <Link href={`/blog/${product.slug.current}`}>
+                <Link href={`/products/${product.slug?.current}`}>
                   <div className="flex justify-center items-center w-full bg-grey py-6 w-full">
                     <div className="text-[20px] font-[600] text-center">
                       {product.name}
