@@ -42,14 +42,14 @@ export default async function BlogMain() {
           <div className="text-center text-3xl font-600 mb-16 mt-10">
             Semua artikel
           </div>
-          <div className="bg-white flex gap-8 h-full">
+          <div className="bg-white flex gap-10 h-full flex-wrap">
             {posts.map((post) => (
-              <Card key={post._id} className="relative w-[500px] shadow-lg">
+              <Card key={post._id} className="relative w-[325px] shadow-lg">
                 {post.img && (
                   <img
                     src={post.img?.asset?.url}
                     alt={post.title}
-                    style={{ width: 350, height: "200px" }}
+                    style={{ width: 350 }}
                   />
                 )}
                 <Link href={`/blog/${post.slug.current}`}>
