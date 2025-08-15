@@ -29,11 +29,17 @@ body {
 .swiper-button-prev {
   color: #fff !important;
   left: 110px !important;
+  @media (max-width: 960px) {
+    left: 50px !important;
+  }
 }
 
 .swiper-button-next {
   color: #fff !important;
   right: 110px !important;
+  @media (max-width: 960px) {
+    right: 50px !important;
+  }
 }
 
 .swiper {

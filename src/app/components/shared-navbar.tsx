@@ -10,7 +10,7 @@ export const SharedNavbar = () => {
     <div className="flex flex-col max-w-[1150px] mx-auto">
       <div className="flex justify-between items-center px-10">
         <a href="/">
-          <img src="images/efloor.png" alt="" className="w-24 h-24" />
+          <img src="/images/efloor.png" alt="" className="w-24 h-24" />
         </a>
         <div className="flex gap-12 text-lg font-[500]">
           <div>

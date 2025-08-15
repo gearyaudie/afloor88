@@ -57,9 +57,9 @@ export default function Home() {
               <div className="absolute inset-0 bg-black opacity-70"></div>
 
               {/* Content on top */}
-              <div className="relative z-10 flex">
-                <div className="text-white flex-1">
-                  <div className="flex flex-col justify-center h-full align-items-center pl-16">
+              <div className="relative z-10 flex flex-col gap-14 md:flex-row lg:flex-row">
+                <div className="text-white flex-1 order-2 md:lg:order-1">
+                  <div className="flex flex-col justify-center h-full align-items-center px-4 pb-12 md:lg:pl-16">
                     <div className="font-[600] text-[36px] text-left leading-tight">
                       Lem Vinyl EFLOOR
                       <br />
@@ -84,7 +84,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="flex-1 w-full">
+                <div className="flex-1 w-full order-1 md:lg:order-2">
                   {/* Square img here */}
                   <img src="images/lem-vinyl.jpeg" alt="" />
                 </div>
@@ -99,9 +99,9 @@ export default function Home() {
               <div className="absolute inset-0 bg-black opacity-70"></div>
 
               {/* Content on top */}
-              <div className="relative z-10 flex">
-                <div className="text-white flex-1">
-                  <div className="flex flex-col justify-center h-full align-items-center pl-16">
+              <div className="relative z-10 flex flex-col gap-14 md:flex-row lg:flex-row">
+                <div className="text-white flex-1 order-2 md:lg:order-1">
+                  <div className="flex flex-col justify-center h-full align-items-center px-4 pb-12 md:lg:pl-16">
                     <div className="font-[600] text-[44px] text-left leading-tight">
                       Excellent Flooring. <br />
                       for Your Needs
@@ -125,7 +125,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="flex-1 w-full">
+                <div className="flex-1 w-full order-1 md:lg:order-2">
                   {/* Square img here */}
                   <img src="images/lantai-vinyl-tahan-air.png" alt="" />
                 </div>
@@ -133,6 +133,7 @@ export default function Home() {
             </div>
           </div>
         </SwiperSlide>
+
         <SwiperSlide>
           <div className="mx-8">
             <div className="relative bg-[url('/images/bg.png')] bg-cover bg-center my-2 mx-auto max-w-[1000px]">
@@ -140,9 +141,9 @@ export default function Home() {
               <div className="absolute inset-0 bg-black opacity-70"></div>
 
               {/* Content on top */}
-              <div className="relative z-10 flex">
-                <div className="text-white flex-1">
-                  <div className="flex flex-col justify-center h-full align-items-center pl-16">
+              <div className="relative z-10 flex flex-col gap-14 md:flex-row lg:flex-row">
+                <div className="text-white flex-1 order-2 md:lg:order-1">
+                  <div className="flex flex-col justify-center h-full align-items-center px-4 pb-12 md:lg:pl-16">
                     <div className="font-[600] text-[36px] text-left leading-tight">
                       List Siku L <br />
                       End Molding EFLOOR
@@ -166,7 +167,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="flex-1 w-full">
+                <div className="flex-1 w-full order-1 md:lg:order-2">
                   {/* Square img here */}
                   <img src="images/list-siku-l.jpeg" alt="" />
                 </div>
