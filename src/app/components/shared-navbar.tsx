@@ -12,7 +12,7 @@ export const SharedNavbar = () => {
         <a href="/">
           <img src="/images/efloor.png" alt="" className="w-24 h-24" />
         </a>
-        <div className="flex gap-12 text-lg font-[500]">
+        <div className="gap-12 text-lg font-[500] d-none md:lg:flex">
           <div>
             <Link href="/blog">
               <span

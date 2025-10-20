@@ -37,11 +37,11 @@ export default async function ProductsMain() {
       <SharedNavbar />
 
       <div className="bg-white text-black h-full">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="text-center text-3xl font-600 mb-20 mt-16">
             Semua produk
           </div>
-          <div className="bg-white flex gap-10 h-full flex-wrap">
+          <div className="bg-white flex gap-10 h-full flex-wrap justify-center">
             {products.map((product) => (
               <Card key={product._id} className="w-[325px] shadow-lg">
                 {product.image && (

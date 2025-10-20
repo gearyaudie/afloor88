@@ -8,12 +8,6 @@ import { SharedNavbar } from "@/app/components/shared-navbar";
 import { PortableText } from "@portabletext/react";
 import { Metadata } from "next";
 
-type Params = {
-  params: {
-    slug: string;
-  };
-};
-
 const postQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
     title,
@@ -51,7 +45,7 @@ const portableTextComponents = {
   },
 };
 
-export default async function BlogPostPage({ params }: Params) {
+export default async function BlogPostPage({ params }: any) {
   const post = await client.fetch(postQuery, { slug: params.slug });
   console.log(post);
   if (!post) return notFound();
@@ -87,7 +81,7 @@ export default async function BlogPostPage({ params }: Params) {
   );
 }
 
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
+export async function generateMetadata({ params }: any): Promise<Metadata> {
   const post = await client.fetch(postQuery, { slug: params.slug });
 
   if (!post) return {};

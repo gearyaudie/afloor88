@@ -66,7 +66,7 @@ export default async function ProductsDetailsPage({ params }: Params) {
             <div className="flex-1">
               <img
                 src={post.image?.asset?.url}
-                alt={post.title}
+                alt={post.name}
                 className="w-[500px] rounded-lg mt-10 mb-4"
               />
             </div>
